@@ -1,17 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="fr.esgi.jamal.timesup.MainActivity">
+    tools:context="fr.esgi.jamal.timesup.MainActivity"
+    android:id="@+id/playerListLayout">
 
     <TextView
-        android:text="Hello World!"
+        android:text="TIME'S UP\nGAME OF THRONES"
+        android:id="@+id/titleTextView"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="#f7f7f7"
+        android:background="#456eb4"
+        android:fontFamily="@string/title_font"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp">
+    </TextView>
+
+    <ListView
+        android:id="@+id/playerList"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+        android:minHeight="15dp"
+        android:layout_height="150dp"
+        android:background="#f7f7f7">
+    </ListView>
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="fr.esgi.jamal.timesup.MainActivity"
+        android:id="@+id/addSectionLayout">
+
+        <EditText
+            android:id="@+id/nameInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Type your name ...">
+        </EditText>
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:layout_marginRight="0px">
+        </Button>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp">
+        </TextView>
+
+        <Button
+            android:id="@+id/runButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RUN"
+            android:layout_marginRight="0px">
+        </Button>
+    </TableLayout>
+
+</TableLayout>

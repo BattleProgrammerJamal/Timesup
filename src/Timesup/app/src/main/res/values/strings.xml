@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Timesup</string>
+    <string name="title_font">arial</string>
+    <string name="responsePlaceholder">What this image represents ?</string>
 </resources>
