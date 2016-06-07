@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RESTART"
-        android:layout_marginRight="0px">
+        android:layout_marginRight="0px"> <!-- Euh pour quoi faire ? C'est déjà à 0 -->
     </Button>
 
 </TableLayout>
