@@ -48,7 +48,7 @@ public class GameActivity extends AppCompatActivity {
     private void ValidateResponse()
     {
         EditText responseEdit = (EditText)findViewById(R.id.responseEdit);
-        if(responseEdit.getText().toString() != "")
+        if(responseEdit.getText().toString() != "") // Hihi il manque quand même quelques vérifications
         {
             if(cards.get(currentCardIndex).name.compareToIgnoreCase(responseEdit.getText().toString()) == 0)
             {
@@ -56,7 +56,7 @@ public class GameActivity extends AppCompatActivity {
                 p.setLastScore(p.getLastScore() + 1);
                 TextView messageView = (TextView)findViewById(R.id.messageTextView);
                 messageView.setVisibility(View.VISIBLE);
-                messageView.setText("Bonne réponse ! ");
+                messageView.setText("Bonne réponse ! "); // textes dans strings.xml
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable(){
                     public void run()
@@ -152,17 +152,20 @@ public class GameActivity extends AppCompatActivity {
         ImageView iView = (ImageView)findViewById(R.id.currentImage);
         iView.setImageResource(cards.get(currentCardIndex).id);
 
+        // On voit pas forcément les toasts vu qu'ils apparaissent quand on écrit.
         Toast t = Toast.makeText(getApplicationContext(), players.get(currentPlayerIndex).getName() + ", à ton tour ! ", Toast.LENGTH_LONG);
         t.show();
 
         final Handler handler = new Handler();
         running = true;
+        // Oui ça marche. Mais c'est un peu du trick.
+        // Regarde la documentation de CountDownTimer, ça réponds précisément à ton besoin.
         handler.postDelayed(new Runnable(){
             public void run()
             {
                 time += 1.0f;
                 ProgressBar timebar = (ProgressBar)findViewById(R.id.timerProgressBar);
-                int v = (int)((time * 100.0f) / maximumTime);
+                int v = (int)((time * 100.0f) / maximumTime); // v pour un pourcentage ?
 
                 if(time > maximumTime)
                 {

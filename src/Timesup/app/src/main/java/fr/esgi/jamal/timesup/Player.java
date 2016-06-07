@@ -7,6 +7,7 @@ import android.os.Parcelable;
 /**
  * Created by Jamal on 20/05/2016.
  */
+// C'est bien d'avoir utiliser l'implémentation Parcelable et la gestion des sharedPref pour stocker les données.
 public class Player implements Parcelable
 {
     private static int  sm_id = 0;

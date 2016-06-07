@@ -10,6 +10,9 @@
     tools:context="fr.esgi.jamal.timesup.MainActivity"
     android:id="@+id/playerListLayout">
 
+    <!-- Les textes devraient être dans strings.xml et les couleurs dans colors.xml -->
+    <!-- Les tailles de textes devraient être en sp. Cela permet de prendre en compte les préférences
+    utilisateurs -->
     <TextView
         android:text="TIME'S UP\nGAME OF THRONES"
         android:id="@+id/titleTextView"
@@ -41,12 +44,13 @@
         tools:context="fr.esgi.jamal.timesup.MainActivity"
         android:id="@+id/addSectionLayout">
 
+        <!-- la balise android:inputType="textPersonName" permet d'éviter la gestion de la touche entrée.
+         En plus d'adapter le clavier. -->
         <EditText
             android:id="@+id/nameInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Type your name ...">
-        </EditText>
+            android:hint="Type your name ..."/>
 
         <Button
             android:id="@+id/addButton"
@@ -56,6 +60,7 @@
             android:layout_marginRight="0px">
         </Button>
 
+        <!-- Pour faire un espace avec le bouton il fallait juste utiliser marginBottom ou marginTop -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="50dp">

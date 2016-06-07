@@ -20,8 +20,10 @@ import android.widget.ListView;
 import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity {
-    public Vector<Player> players;
+    public Vector<Player> players; // Mieux vaut utiliser ArrayList, c'est moins couteux. (Vu que tu n'as
+    // pas de problème de synchronisation )
 
+    // Avec le conseil du xml tu n'as plus besoin de cette fonction
     private void hideVirtualKeyboard(IBinder token)
     {
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -58,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         ListView myList = (ListView)findViewById(R.id.playerList);
         myList.setAdapter(adapter);
 
+        // Il faut revoir le design de la page ou ajouter l'option adjustResize à ton activité.
+        // Car sinon je ne vois pas ce que j'écris. (C'est recouvert pas le clavier)
         EditText playerEdit = (EditText)findViewById(R.id.nameInput);
         hideVirtualKeyboard(playerEdit.getWindowToken());
         playerEdit.setOnKeyListener(new View.OnKeyListener() {
@@ -72,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         Button btn = (Button)findViewById(R.id.addButton);
+        // Attention la méthode findViewById peut renvoyer null.
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
